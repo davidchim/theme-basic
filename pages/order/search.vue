@@ -61,12 +61,14 @@ const pageLoading = useGetLoading()  // default page is loading when Get Request
               <tr v-for="item in dataTxnOrders.items" :key="'txn-order-' + item.id"
                 class="bg-white border-b text-gray-900">
                 <th scope="row" class="px-6 py-4 whitespace-nowrap">
-                  <NuxtLink :to="localePath(`/order/${item.id}`)" target="_blank" class="underline">
+                  <NuxtLink :to="localePath(`/order/${item.id}`)" target="_blank" class="underline text-blue-500">
                     {{ item.id }}
                   </NuxtLink>
                 </th>
                 <td class="px-6 py-4">
-                  {{ item.skuName }}
+                  <NuxtLink :to="localePath(`/order/${item.id}`)" target="_blank" class="underline text-blue-500">
+                    {{ item.skuName }}
+                  </NuxtLink>
                 </td>
                 <td class="px-6 py-4">
                   {{ item.quantity }}
